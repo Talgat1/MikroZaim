@@ -31,6 +31,10 @@ namespace MikroZaim
 
         private void money_TextChanged(object sender, EventArgs e)
         {
+            if (money > 500000)
+            {
+                Masage.box("Ошибка");
+            }
 
         }
 
@@ -44,11 +48,6 @@ namespace MikroZaim
             double[] sum_prot = prot.Text.Split(' ').Select(x => double.Parse(x).ToString);
             var SumProt = prot.Where(x=>char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumProt = SumProt / 10 / days;
-
-            if (money > 500000)
-            {
-                object p = Masage.box("Ошибка");
-            }
         }
     }
 }
