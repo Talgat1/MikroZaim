@@ -44,6 +44,11 @@ namespace MikroZaim
             double[] sum_prot = prot.Text.Split(' ').Select(x => double.Parse(x).ToString);
             var SumProt = prot.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumProt = SumProt / 10 / days;
+
+            if (money > 500000)
+            {
+                Console.WriteLine("Ошибка");
+            }
         }
     }
 }
