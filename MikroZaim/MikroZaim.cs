@@ -36,10 +36,14 @@ namespace MikroZaim
 
         private void sum_Click(object sender, EventArgs e)
         {
-            int day = Convert.ToInt32(Days.Text);
-            string prot = Convert.ToString(Prot);
-            double money = 
-            
+            int days = Convert.ToInt32(day.Text);
+            string Prot = Convert.ToString(prot);
+            double Money = Convert.ToDouble(money.Text)
+
+
+            double[] sum_prot = prot.Text.Split(' ').Select(x => double.Parse(x).ToString);
+            var SumProt = prot.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
+            SumProt = SumProt / 10 / days;
         }
     }
 }
