@@ -12,7 +12,7 @@ namespace MikroZaim
 {
     public partial class MikroZaim : Form
     {
-
+        public object Masage { get; private set; }
 
         public MikroZaim()
         {
@@ -42,12 +42,12 @@ namespace MikroZaim
 
 
             double[] sum_prot = prot.Text.Split(' ').Select(x => double.Parse(x).ToString);
-            var SumProt = prot.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
+            var SumProt = prot.Where(x=>char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumProt = SumProt / 10 / days;
 
             if (money > 500000)
             {
-                Console.WriteLine("Ошибка");
+                object p = Masage.box("Ошибка");
             }
         }
     }
